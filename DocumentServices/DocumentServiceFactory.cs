@@ -5,7 +5,7 @@ namespace DocumentServices
 {
     public static class DocumentServiceFactory
     {
-        public static TDocumentService GetDocumentService<TDocumentService>(IDocument document) where TDocumentService : IDocumentService
+        public static TDocumentService Get<TDocumentService>(IDocument document) where TDocumentService : IDocumentService
         {
             var ds = new CaseDocumentService((ICase)document);
             var idc = (IDocumentService)ds;

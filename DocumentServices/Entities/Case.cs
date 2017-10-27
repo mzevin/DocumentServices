@@ -6,7 +6,7 @@ namespace DocumentServices.Entities
     {
         public string Promote()
         {
-            var caseDocumentService = DocumentServiceFactory.GetDocumentService<ICaseDocumentService>(this);
+            var caseDocumentService = DocumentServiceFactory.Get<ICaseDocumentService>(this);
             return caseDocumentService.Promote();
         }
     }

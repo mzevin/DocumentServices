@@ -13,7 +13,7 @@ namespace DocumentServices
             const string CASE_ID = "ABC";
             var caseDoc = new Case { ID = CASE_ID };
 
-            var service = DocumentServiceFactory.GetDocumentService<ICaseDocumentService>(caseDoc);
+            var service = DocumentServiceFactory.Get<ICaseDocumentService>(caseDoc);
             Assert.IsNotNull(service);
             var id1 = service.Promote();
             Assert.AreEqual(CASE_ID, id1);

@@ -1,6 +1,8 @@
 ﻿namespace DocumentServices
 {
-    public interface IDocumentService<TDocument> where TDocument : IDocument
+    public interface IDocumentService { }
+
+    public interface IDocumentService<TDocument> : IDocumentService where TDocument : IDocument
     {
     }
 }

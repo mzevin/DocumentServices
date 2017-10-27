@@ -5,11 +5,10 @@ namespace DocumentServices
 {
     public static class DocumentServiceFactory
     {
-        public static TDocumentService GetDocumentService<TDocumentService, TDocument>(TDocument document) 
-            where TDocumentService : IDocumentService<TDocument> where TDocument : IDocument
+        public static TDocumentService GetDocumentService<TDocumentService>(IDocument document) where TDocumentService : IDocumentService
         {
             var ds = new CaseDocumentService((ICase)document);
-            var idc = (ICaseDocumentService)ds;
+            var idc = (IDocumentService)ds;
             return (TDocumentService)idc;
         }
     }

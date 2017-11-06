@@ -1,4 +1,4 @@
-﻿namespace DocumentServices
+﻿namespace WorkflowServer.Foundation.DocumentServices
 {
     public abstract class DocumentServiceBase<TDocument> : IDocumentService<TDocument> where TDocument : IDocument
     {

@@ -1,8 +1,9 @@
-﻿using DocumentServices.Services;
+﻿using WorkflowServer.Foundation.DocumentServices;
+using Entities.Interfaces;
 
-namespace DocumentServices.Entities
+namespace Entities
 {
-    public partial class Case
+    public partial class Case : ICase
     {
         public string Promote()
         {

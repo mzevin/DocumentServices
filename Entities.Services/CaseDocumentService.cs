@@ -1,6 +1,7 @@
-﻿using DocumentServices.Entities;
+﻿using Entities.Interfaces;
+using WorkflowServer.Foundation.DocumentServices;
 
-namespace DocumentServices.Services
+namespace Entities.Services
 {
     public class CaseDocumentService : DocumentServiceBase<ICase>, ICaseDocumentService
     {

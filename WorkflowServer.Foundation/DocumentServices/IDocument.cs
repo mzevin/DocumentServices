@@ -1,4 +1,4 @@
-﻿namespace DocumentServices
+﻿namespace WorkflowServer.Foundation.DocumentServices
 {
     public interface IDocument
     {

@@ -1,6 +1,7 @@
 ﻿using System;
+using WorkflowServer.Foundation.DocumentServices;
 
-namespace DocumentServices.Entities
+namespace Entities.Interfaces
 {
     public interface ICase : IDocument
     {

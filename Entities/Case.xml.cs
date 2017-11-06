@@ -1,6 +1,7 @@
 ﻿using System;
+using Entities.Interfaces;
 
-namespace DocumentServices.Entities
+namespace Entities
 {
     public partial class Case : ICase
     {

@@ -1,19 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CBB5F08-F14D-410D-85F6-020A26A3A045}</ProjectGuid>
+    <ProjectGuid>{2D9A5DB7-F673-4675-861A-4CC689C43F22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DocumentServices</RootNamespace>
-    <AssemblyName>DocumentServices</AssemblyName>
+    <RootNamespace>Entities.Services</RootNamespace>
+    <AssemblyName>Entities.Services</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,29 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentServiceBase.cs" />
-    <Compile Include="DocumentServiceFactory.cs" />
-    <Compile Include="Entities\Case.cs" />
-    <Compile Include="Entities\Case.xml.cs" />
-    <Compile Include="Entities\ICase.cs" />
-    <Compile Include="Services\CaseDocumentService.cs" />
-    <Compile Include="Services\ICaseDocumentService.cs" />
-    <Compile Include="IDocument.cs" />
-    <Compile Include="IDocumentService.cs" />
+    <Compile Include="CaseDocumentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <ProjectReference Include="..\Entities.Interfaces\Entities.Interfaces.csproj">
+      <Project>{198a1c74-6a8c-4acc-a0b2-ecb262e72d51}</Project>
+      <Name>Entities.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{0c7fc2ea-6a5b-4b51-a728-1d9912828ebf}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkflowServer.Foundation\WorkflowServer.Foundation.csproj">
+      <Project>{66c0d9f0-9c8a-491e-bccf-8bb886d009f7}</Project>
+      <Name>WorkflowServer.Foundation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props'))" />
-  </Target>
 </Project>
